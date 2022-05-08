@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="idDrawerItemMenu">1</dimen>
+    <dimen name="idDrawerItemEat">2</dimen>
+    <dimen name="idDrawerItemPizza">3</dimen>
+    <dimen name="idDrawerItemTortilla">4</dimen>
+    <dimen name="idDrawerItemPita">5</dimen>
+    <dimen name="idDrawerItemDrinks">6</dimen>
+    <dimen name="idDrawerItemSmoothies">7</dimen>
+    <dimen name="idDrawerItemMilkShake">8</dimen>
+    <dimen name="idDrawerItemCraftTea">9</dimen>
+    <dimen name="idDrawerItemJobObligations">10</dimen>
+    <dimen name="idDrawerItemVideoPhoto">11</dimen>
+    <dimen name="idDrawerItemTests">12</dimen>
+    <dimen name="idDrawerItemStores">13</dimen>
+    <dimen name="idDrawerItemStaff">14</dimen>
+    <dimen name="idDrawerItemSettings">15</dimen>
+    <dimen name="idDrawerItemAdministratorRights">16</dimen>
+    <dimen name="settings_user_photo_width">60dp</dimen>
+    <dimen name="settings_user_photo_height">60dp</dimen>
+    <dimen name="settings_user_photo_border">2dp</dimen>
+    <dimen name="margin_start">16dp</dimen>
+    <dimen name="margin_end">16dp</dimen>
+    <dimen name="margin_top">16dp</dimen>
+    <dimen name="margin_bottom">16dp</dimen>
+    <dimen name="settings_header_height">100dp</dimen>
+    <dimen name="main_toolbar_height">50dp</dimen>
+    <dimen name="settings_tv_normal_size">16sp</dimen>
+    <dimen name="settings_camera_photo_width">50dp</dimen>
+    <dimen name="settings_camera_photo_height">50dp</dimen>
+    <dimen name="settings_ripple_effect_buttons">4dp</dimen>
+    <dimen name="margin_total_16dp">16dp</dimen>
+    <dimen name="padding_total_edit_text_5dp">5dp</dimen>
+</resources>

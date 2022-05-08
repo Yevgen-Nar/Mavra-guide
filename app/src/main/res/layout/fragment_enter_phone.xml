@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.EnterPhoneFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/registerToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/auxiliary_color"
+        app:title="@string/title_your_namber_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingStart="16dp"/>
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_enter_your_number_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/register_default_hint_phone"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/colorDarkGray"
+        android:inputType="phone"
+        android:layout_margin="@dimen/margin_total_16dp"
+        android:padding="@dimen/padding_total_edit_text_5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerToolBar" />
+
+    <TextView
+        android:id="@+id/tv_register_info_enter_your_number_phone"
+        style="@style/Settings_small_text_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register_enter_your_phone"
+        android:layout_marginStart="@dimen/margin_start"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_enter_your_number_phone" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/register_btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_total_16dp"
+        android:backgroundTint="@color/auxiliary_color"
+        app:icon="@drawable/ic_register_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_register_info_enter_your_number_phone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.EnterCodeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/registerCodeToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/auxiliary_color"
+        app:title="@string/title_input_code"
+        android:paddingStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_register_code_image_sms"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_register_code_sms"
+        android:layout_margin="@dimen/margin_total_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerCodeToolBar" />
+
+    <TextView
+        android:id="@+id/tv_register_code_info_sms"
+        style="@style/Settings_small_text_button"
+        android:text="@string/register_code_info_sms"
+        android:layout_marginStart="@dimen/margin_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_register_info_enter_your_code" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/register_code_et_enter_your_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="______"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:textColorHint="@color/colorDarkGray"
+        android:inputType="phone"
+        android:layout_margin="@dimen/margin_total_16dp"
+        android:padding="@dimen/padding_total_edit_text_5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_register_code_info_sms" />
+
+    <TextView
+        android:id="@+id/tv_register_info_enter_your_code"
+        android:layout_width="wrap_content"
+        style="@style/Settings_normal_text_button"
+        android:text="@string/register_code_tv_enter_code"
+        android:layout_marginStart="@dimen/margin_start"
+        android:layout_margin="@dimen/margin_total_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_register_code_image_sms" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
