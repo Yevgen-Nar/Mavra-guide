@@ -17,14 +17,12 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/im_settings_user_photo"
-            android:layout_width="@dimen/settings_user_photo_width"
-            android:layout_height="@dimen/settings_user_photo_height"
-            android:layout_marginStart="@dimen/margin_start"
             android:src="@drawable/icons_portable"
-            app:civ_border_color="#FF000000"
+            app:civ_border_color="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/settings_circle_image_view_icon_user_photo" />
 
         <TextView
             android:id="@+id/tv_settings_user_name_header"
@@ -190,14 +188,12 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/im_settings_camera"
-        android:layout_width="@dimen/settings_camera_photo_width"
-        android:layout_height="@dimen/settings_camera_photo_height"
-        android:layout_marginEnd="@dimen/margin_end"
         android:src="@drawable/icon_camera"
-        app:civ_border_color="#FF000000"
+        app:civ_border_color="@color/black"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/cl_settings_header_bloc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_settings_header_bloc" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_settings_header_bloc"
+        style="@style/setting_circle_image_view_camera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

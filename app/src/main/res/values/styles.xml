@@ -42,4 +42,16 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="setting_circle_image_view_camera">
+        <item name="android:layout_width">@dimen/settings_camera_photo_width</item>
+        <item name="android:layout_height">@dimen/settings_camera_photo_height</item>
+        <item name="android:layout_marginEnd">@dimen/margin_end</item>
+    </style>
+
+    <style name="settings_circle_image_view_icon_user_photo">
+        <item name="android:layout_width">@dimen/settings_user_photo_width</item>
+        <item name="android:layout_height">@dimen/settings_user_photo_height</item>
+        <item name="android:layout_marginStart">@dimen/margin_start</item>
+    </style>
 </resources>

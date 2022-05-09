@@ -22,10 +22,6 @@ public class PizzaFragment extends Fragment {
         binding = FragmentPizzaBinding.inflate(getLayoutInflater(), container, false);
         View v = binding.getRoot();
 
-
-        binding.tvPizzaFragment.setText("привет пицца ");
-        binding.tvPizzaFragment.setTextSize(30);
-
         return v;
     }
 }
