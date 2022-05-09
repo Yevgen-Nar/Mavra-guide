@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "606175086736",
+    "project_id": "mavra-guide",
+    "storage_bucket": "mavra-guide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606175086736:android:4a44b5431ce35794b17015",
+        "android_client_info": {
+          "package_name": "com.narozhnyiyevgen.mavraguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606175086736-b6d4541eepu91kd6sflloshp9juo7juc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.narozhnyiyevgen.mavraguide",
+            "certificate_hash": "36654bf627d6e4b3a463fff135c2778e3a640a00"
+          }
+        },
+        {
+          "client_id": "606175086736-hghm9o2in3aa92cb14la0i81vilnjjf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHOPU5y5v0J3amFDNCEkx03UaF5niLNug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606175086736-hghm9o2in3aa92cb14la0i81vilnjjf5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
