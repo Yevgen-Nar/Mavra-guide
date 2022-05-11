@@ -10,6 +10,7 @@ import android.os.Bundle;
 import com.narozhnyiyevgen.mavraguide.R;
 import com.narozhnyiyevgen.mavraguide.databinding.ActivityRegistrBinding;
 import com.narozhnyiyevgen.mavraguide.ui.fragments.EnterPhoneFragment;
+import com.narozhnyiyevgen.mavraguide.ui.objects.FireBase;
 
 public class RegisterActivity extends AppCompatActivity {
     private ActivityRegistrBinding binding;
@@ -20,6 +21,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityRegistrBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        FireBase.init();
+        regToolbar = binding.registerActivityToolBar;
 
     }
 

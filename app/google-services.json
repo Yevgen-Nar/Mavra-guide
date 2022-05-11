@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "606175086736",
+    "firebase_url": "https://mavra-guide-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "mavra-guide",
     "storage_bucket": "mavra-guide.appspot.com"
   },

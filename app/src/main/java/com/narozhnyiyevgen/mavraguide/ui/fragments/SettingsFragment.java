@@ -26,7 +26,7 @@ public class SettingsFragment extends Fragment {
     private FragmentSettingsBinding binding;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSettingsBinding.inflate(getLayoutInflater(), container, false);
@@ -49,10 +49,10 @@ public class SettingsFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.settings_btn_actions_menu_exit) {
-            FireBase.getAUTH().signOut();
+            FireBase.AUTH.signOut();
             Intent intent = new Intent(getActivity(), MainActivity.class);
+            requireActivity().finish();
             startActivity(intent);
-            getActivity().finish();
         }
         return true;
     }

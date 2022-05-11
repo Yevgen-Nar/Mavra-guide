@@ -17,14 +17,13 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private Toolbar mToolBar;
     private AppDrawer appDrawer;
-//    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        FireBase.setAUTH(FirebaseAuth.getInstance());
+
 
     }
 
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initFunctions() {
 
-        if (FireBase.getAUTH().getCurrentUser() != null) {
+        if (FireBase.AUTH.getCurrentUser() != null) {
             setSupportActionBar(mToolBar);
             appDrawer.create();
             getSupportFragmentManager().beginTransaction()
@@ -52,5 +51,6 @@ public class MainActivity extends AppCompatActivity {
     private void initFields() {
         appDrawer = new AppDrawer(MainActivity.this, mToolBar);
         mToolBar = binding.mainToolBar;
+        FireBase.init();
     }
 }

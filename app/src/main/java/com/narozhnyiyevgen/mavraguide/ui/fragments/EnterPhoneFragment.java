@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 
 
 public class EnterPhoneFragment extends Fragment {
-
     private FragmentEnterPhoneBinding binding;
     private String phoneNumber;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks authCallbacks;
@@ -45,16 +44,17 @@ public class EnterPhoneFragment extends Fragment {
         authCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                FireBase.getAUTH()
+                FireBase.AUTH
                         .signInWithCredential(phoneAuthCredential)
                         .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(getContext(), "Добро пожаловать.", Toast.LENGTH_SHORT).show();
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getContext(), "Добро пожаловать.", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        startActivity(intent);
-                    }
-                });
+                                Intent intent = new Intent(getActivity(), MainActivity.class);
+                                requireActivity().finish();
+                                startActivity(intent);
+                            }
+                        });
             }
 
             @Override
@@ -64,6 +64,7 @@ public class EnterPhoneFragment extends Fragment {
 
             @Override
             public void onCodeSent(@NonNull String id, @NonNull PhoneAuthProvider.ForceResendingToken token) {
+                assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction()
                         .replace(R.id.registerDataContainer, new EnterCodeFragment(phoneNumber, id))
                         .addToBackStack(null)
@@ -84,7 +85,8 @@ public class EnterPhoneFragment extends Fragment {
     }
 
     private void authUser() {
-        phoneNumber = binding.etEnterYourNumberPhone.getText().toString();
+
+        phoneNumber = Objects.requireNonNull(binding.etEnterYourNumberPhone.getText()).toString();
 
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 phoneNumber,
@@ -94,5 +96,12 @@ public class EnterPhoneFragment extends Fragment {
                 authCallbacks
         );
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        binding.etEnterYourNumberPhone.setText(null);
+    }
+
 
 }
