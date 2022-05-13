@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.narozhnyiyevgen.mavraguide.MainActivity;
+import com.narozhnyiyevgen.mavraguide.R;
 import com.narozhnyiyevgen.mavraguide.databinding.FragmentEnterCodeBinding;
 import com.narozhnyiyevgen.mavraguide.ui.objects.EnumNode;
 import com.narozhnyiyevgen.mavraguide.ui.objects.FireBase;
@@ -74,24 +75,26 @@ public class EnterCodeFragment extends Fragment {
                 .signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        String uid = Objects.requireNonNull(FireBase.AUTH.getCurrentUser()).getUid().toString();
+                        String uid = Objects.requireNonNull(FireBase.AUTH.getCurrentUser()).getUid();
 
                         Map<String, Object> usersMap = new ArrayMap<>();
                         usersMap.put(UserFields.ID.toString(), uid);
                         usersMap.put(UserFields.PHONE.toString(), phoneNumber);
-                        usersMap.put(UserFields.NAME.toString(), "Name");
+                        usersMap.put(UserFields.NAME.toString(), UserFields.NAME.getUSER_FIELDS_VALUE());
 
-                        FireBase.REF_DATA_ROOT.child(EnumNode.NODE_MAIN.toString())
-                                .child(EnumNode.NODE_USERS.toString())
+                        FireBase.REF_DATA_ROOT
+                                .child(EnumNode.NODE_MAIN.getNODE_NAME())
+                                .child(EnumNode.NODE_PIZZERIA.getNODE_NAME())
+                                .child(EnumNode.NODE_USERS.getNODE_NAME())
                                 .child(uid)
                                 .updateChildren(usersMap)
                                 .addOnCompleteListener(task1 -> {
                                     if (task1.isSuccessful()) {
-                                        Toast.makeText(getContext(), "Добро пожаловать.", Toast.LENGTH_SHORT).show();
-
                                         Intent intent = new Intent(getActivity(), MainActivity.class);
                                         requireActivity().finish();
                                         startActivity(intent);
+
+                                        Toast.makeText(getContext(), R.string.enter_code_wellcom, Toast.LENGTH_SHORT).show();
                                     } else {
                                         Toast.makeText(getContext(), Objects.requireNonNull(task1.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                                     }

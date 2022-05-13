@@ -173,43 +173,43 @@ public class AppDrawer {
 
         if (id == R.dimen.idDrawerItemPizza) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new PizzaFragment()).commit();
+                    .replace(R.id.data_container, new PizzaFragment()).commit();
         } else if (id == R.dimen.idDrawerItemTortilla) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new TortillaFragment()).commit();
+                    .replace(R.id.data_container, new TortillaFragment()).commit();
         } else if (id == R.dimen.idDrawerItemPita) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new PitaFragment()).commit();
+                    .replace(R.id.data_container, new PitaFragment()).commit();
         } else if (id == R.dimen.idDrawerItemSmoothies) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new SmoothiesFragment()).commit();
+                    .replace(R.id.data_container, new SmoothiesFragment()).commit();
         } else if (id == R.dimen.idDrawerItemMilkShake) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new MilkShakeFragment()).commit();
+                    .replace(R.id.data_container, new MilkShakeFragment()).commit();
         } else if (id == R.dimen.idDrawerItemCraftTea) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new CraftTeaFragment()).commit();
+                    .replace(R.id.data_container, new CraftTeaFragment()).commit();
         } else if (id == R.dimen.idDrawerItemJobObligations) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new JobObligationsFragment()).commit();
+                    .replace(R.id.data_container, new JobObligationsFragment()).commit();
         } else if (id == R.dimen.idDrawerItemVideoPhoto) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new VideoPhotoFragment()).commit();
+                    .replace(R.id.data_container, new VideoPhotoFragment()).commit();
         } else if (id == R.dimen.idDrawerItemTests) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new TestsFragment()).commit();
+                    .replace(R.id.data_container, new TestsFragment()).commit();
         } else if (id == R.dimen.idDrawerItemStores) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new StoresFragment()).commit();
+                    .replace(R.id.data_container, new StoresFragment()).commit();
         } else if (id == R.dimen.idDrawerItemStaff) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new StaffFragment()).commit();
+                    .replace(R.id.data_container, new StaffFragment()).commit();
         } else if (id == R.dimen.idDrawerItemSettings) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new SettingsFragment()).commit();
+                    .replace(R.id.data_container, new SettingsFragment()).commit();
         } else if (id == R.dimen.idDrawerItemAdministratorRights) {
             activity.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new AdministratorRightsFragment()).commit();
+                    .replace(R.id.data_container, new AdministratorRightsFragment()).commit();
         }
 
     }

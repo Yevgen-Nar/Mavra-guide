@@ -2,10 +2,6 @@ package com.narozhnyiyevgen.mavraguide.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,13 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import com.narozhnyiyevgen.mavraguide.MainActivity;
 import com.narozhnyiyevgen.mavraguide.R;
 import com.narozhnyiyevgen.mavraguide.databinding.FragmentSettingsBinding;
-import com.narozhnyiyevgen.mavraguide.ui.activity.RegisterActivity;
 import com.narozhnyiyevgen.mavraguide.ui.objects.FireBase;
-
-import java.util.Objects;
 
 public class SettingsFragment extends Fragment {
 
@@ -36,9 +32,25 @@ public class SettingsFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+
+        setHasOptionsMenu(true);
+        binding.clSettingButtonChangeName.setOnClickListener(this::goToEditing);
+
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
-    setHasOptionsMenu(true);
+    }
+
+    private void goToEditing(View view) {
+       getFragmentManager().beginTransaction()
+               .replace(R.id.data_container, new UserChangeNameFragment())
+               .addToBackStack(null)
+               .commit();
+
     }
 
     @Override

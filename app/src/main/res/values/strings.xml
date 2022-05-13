@@ -33,4 +33,10 @@
     <string name="title_input_code">Введите проверочный код</string>
     <string name="title_verification">Верификация</string>
     <string name="settings_actions_menu_title_account_exit">Выход из аккаунта</string>
+    <string name="enter_code_wellcom">Добро пожаловать.</string>
+    <string name="user_change_name_string_name">Имя</string>
+    <string name="enter_code_default_hint">______</string>
+    <string name="user_change_name_string_surname">Фамилия</string>
+    <string name="user_change_name_inut_fullname">Введите Имя и Фамилию</string>
+    <string name="toast_data_updated">Данные обновлены</string>
 </resources>

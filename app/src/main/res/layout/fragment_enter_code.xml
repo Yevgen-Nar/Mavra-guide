@@ -12,7 +12,7 @@
         android:layout_height="70dp"
         android:background="@color/auxiliary_color"
         app:title="@string/title_input_code"
-        android:paddingStart="16dp"
+        android:paddingStart="@dimen/paddingStart_16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,20 +39,11 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/register_code_et_enter_your_code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="______"
-        android:lines="1"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="40sp"
-        android:textColorHint="@color/colorDarkGray"
-        android:inputType="phone"
-        android:layout_margin="@dimen/margin_total_16dp"
-        android:padding="@dimen/padding_total_edit_text_5dp"
+        android:hint="@string/enter_code_default_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_register_code_info_sms" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_register_code_info_sms"
+        style="@style/enter_code_edit_text_input_code" />
 
     <TextView
         android:id="@+id/tv_register_info_enter_your_code"

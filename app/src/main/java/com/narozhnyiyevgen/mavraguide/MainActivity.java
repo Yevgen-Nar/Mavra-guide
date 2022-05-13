@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.narozhnyiyevgen.mavraguide.databinding.ActivityMainBinding;
 import com.narozhnyiyevgen.mavraguide.ui.activity.RegisterActivity;
 import com.narozhnyiyevgen.mavraguide.ui.fragments.PizzaFragment;
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        initFields();
 
     }
 
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        initFields();
         initFunctions();
     }
 
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             setSupportActionBar(mToolBar);
             appDrawer.create();
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.dataContainer, new PizzaFragment()).commit();
+                    .replace(R.id.data_container, new PizzaFragment()).commit();
         } else {
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
