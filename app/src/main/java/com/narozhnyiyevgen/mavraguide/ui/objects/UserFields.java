@@ -1,7 +1,13 @@
 package com.narozhnyiyevgen.mavraguide.ui.objects;
 
 public enum UserFields {
-    ID("id"), PHONE("phone"), NAME("name"), FULL_NAME("fullName");
+    ID("id"),
+    PHONE("phone"),
+    NAME("name"),
+    FULL_NAME("fullName"),
+    RANK("rank"),
+    WORK_PLACE("workplace"),
+    PHOTO_URL("photoUrl");
 
    private final String USER_FIELDS_VALUE;
 

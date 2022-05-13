@@ -17,8 +17,8 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.narozhnyiyevgen.mavraguide.MainActivity;
 import com.narozhnyiyevgen.mavraguide.R;
 import com.narozhnyiyevgen.mavraguide.databinding.FragmentEnterCodeBinding;
-import com.narozhnyiyevgen.mavraguide.ui.objects.EnumNode;
-import com.narozhnyiyevgen.mavraguide.ui.objects.FireBase;
+import com.narozhnyiyevgen.mavraguide.ui.objects.NodeEnum;
+import com.narozhnyiyevgen.mavraguide.ui.objects.FireBaseHelper;
 import com.narozhnyiyevgen.mavraguide.ui.objects.UserFields;
 
 import java.util.Map;
@@ -71,21 +71,21 @@ public class EnterCodeFragment extends Fragment {
         String code = Objects.requireNonNull(binding.registerCodeEtEnterYourCode.getText()).toString();
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(id, code);
 
-        FireBase.AUTH
+        FireBaseHelper.AUTH
                 .signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        String uid = Objects.requireNonNull(FireBase.AUTH.getCurrentUser()).getUid();
+                        String uid = Objects.requireNonNull(FireBaseHelper.AUTH.getCurrentUser()).getUid();
 
                         Map<String, Object> usersMap = new ArrayMap<>();
                         usersMap.put(UserFields.ID.toString(), uid);
                         usersMap.put(UserFields.PHONE.toString(), phoneNumber);
                         usersMap.put(UserFields.NAME.toString(), UserFields.NAME.getUSER_FIELDS_VALUE());
 
-                        FireBase.REF_DATA_ROOT
-                                .child(EnumNode.NODE_MAIN.getNODE_NAME())
-                                .child(EnumNode.NODE_PIZZERIA.getNODE_NAME())
-                                .child(EnumNode.NODE_USERS.getNODE_NAME())
+                        FireBaseHelper.REF_DATA_ROOT
+                                .child(NodeEnum.NODE_MAIN.getNODE_NAME())
+                                .child(NodeEnum.NODE_PIZZERIA.getNODE_NAME())
+                                .child(NodeEnum.NODE_USERS.getNODE_NAME())
                                 .child(uid)
                                 .updateChildren(usersMap)
                                 .addOnCompleteListener(task1 -> {

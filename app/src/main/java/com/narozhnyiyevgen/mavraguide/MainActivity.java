@@ -10,19 +10,20 @@ import com.narozhnyiyevgen.mavraguide.databinding.ActivityMainBinding;
 import com.narozhnyiyevgen.mavraguide.ui.activity.RegisterActivity;
 import com.narozhnyiyevgen.mavraguide.ui.fragments.PizzaFragment;
 import com.narozhnyiyevgen.mavraguide.ui.objects.AppDrawer;
-import com.narozhnyiyevgen.mavraguide.ui.objects.FireBase;
+import com.narozhnyiyevgen.mavraguide.ui.objects.FireBaseHelper;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private Toolbar mToolBar;
     private AppDrawer appDrawer;
+    private FireBaseHelper fireBaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        initFields();
+
 
     }
 
@@ -30,12 +31,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        initFields();
         initFunctions();
     }
 
     private void initFunctions() {
 
-        if (FireBase.AUTH.getCurrentUser() != null) {
+        if (FireBaseHelper.AUTH.getCurrentUser() != null) {
             setSupportActionBar(mToolBar);
             appDrawer.create();
             getSupportFragmentManager().beginTransaction()
@@ -44,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
         }
+
+
     }
 
     private void initFields() {
         appDrawer = new AppDrawer(MainActivity.this, mToolBar);
         mToolBar = binding.mainToolBar;
-        FireBase.init();
+        fireBaseHelper = new FireBaseHelper();
+        fireBaseHelper.init();
+        fireBaseHelper.initUser();
     }
-}
+
+
+    }

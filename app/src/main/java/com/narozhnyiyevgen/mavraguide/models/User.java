@@ -1,10 +1,10 @@
 package com.narozhnyiyevgen.mavraguide.models;
 
 public class User {
-    private String id = "";
-    private String name = "";
+    private String ID = "";
+    private String PHONE = "";
+    private String NAME = "";
     private String fullName = "";
-    private String phone = "";
     private String rank = "";
     private String workplace = "";
     private String photoUrl = "";
@@ -12,20 +12,20 @@ public class User {
     public User() {
     }
 
-    public String getId() {
-        return id;
+    public String getID() {
+        return ID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
-    public String getName() {
-        return name;
+    public String getNAME() {
+        return NAME;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNAME(String NAME) {
+        this.NAME = NAME;
     }
 
     public String getFullName() {
@@ -36,12 +36,12 @@ public class User {
         this.fullName = fullName;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPHONE() {
+        return PHONE;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPHONE(String PHONE) {
+        this.PHONE = PHONE;
     }
 
     public String getRank() {

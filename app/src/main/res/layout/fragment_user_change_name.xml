@@ -33,19 +33,4 @@
         app:layout_constraintTop_toBottomOf="@+id/user_change_name_et_change_name"
         android:autofillHints="text" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/black"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="267dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

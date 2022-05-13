@@ -14,9 +14,10 @@ import androidx.fragment.app.Fragment;
 
 import com.narozhnyiyevgen.mavraguide.R;
 import com.narozhnyiyevgen.mavraguide.databinding.FragmentUserChangeNameBinding;
-import com.narozhnyiyevgen.mavraguide.ui.objects.EnumNode;
-import com.narozhnyiyevgen.mavraguide.ui.objects.FireBase;
-import com.narozhnyiyevgen.mavraguide.ui.objects.UserFields;
+import com.narozhnyiyevgen.mavraguide.ui.objects.FireBaseHelper;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 public class UserChangeNameFragment extends Fragment {
@@ -36,6 +37,13 @@ public class UserChangeNameFragment extends Fragment {
     public void onResume() {
         super.onResume();
         setHasOptionsMenu(true);
+        enterNewFullNameUser();
+    }
+
+    private void enterNewFullNameUser() {
+        List<String> fullName = Arrays.asList(FireBaseHelper.USER.getFullName().split(" "));
+        binding.userChangeNameEtChangeName.setText(fullName.get(0));
+        binding.userChangeNameEtChangeSurname.setText(fullName.get(1));
     }
 
     @Override
@@ -57,25 +65,12 @@ public class UserChangeNameFragment extends Fragment {
         String name = binding.userChangeNameEtChangeName.getText().toString();
         String surname = binding.userChangeNameEtChangeSurname.getText().toString();
 
-//        if (name) {
-//            Toast.makeText(getContext(), R.string.user_change_name_inut_fullname, Toast.LENGTH_SHORT).show();
-//        } else {
+        if (name.isEmpty() || surname.isEmpty()) {
+            Toast.makeText(getContext(), R.string.user_change_name_inut_fullname, Toast.LENGTH_SHORT).show();
+        } else {
             String fullname = name + " " + surname;
-            FireBase.REF_DATA_ROOT
-                    .child(EnumNode.NODE_MAIN.getNODE_NAME())
-                    .child(EnumNode.NODE_PIZZERIA.getNODE_NAME())
-                    .child(EnumNode.NODE_USERS.getNODE_NAME())
-                    .child(FireBase.UID)
-                    .child(UserFields.FULL_NAME.getUSER_FIELDS_VALUE())
-                    .setValue(fullname)
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(getActivity(), R.string.toast_data_updated, Toast.LENGTH_SHORT).show();
-                            FireBase.USER.setFullName(fullname);
-                            assert getFragmentManager() != null;
-                            getFragmentManager().popBackStack();
-                        }
-                    });
-//        }
+            new FireBaseHelper().changeFullName(fullname, getFragmentManager());
+            Toast.makeText(getActivity(), R.string.toast_data_updated, Toast.LENGTH_SHORT).show();
+        }
     }
 }

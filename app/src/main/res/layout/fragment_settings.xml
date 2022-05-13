@@ -25,9 +25,9 @@
             style="@style/settings_circle_image_view_icon_user_photo" />
 
         <TextView
-            android:id="@+id/tv_settings_user_name_header"
+            android:id="@+id/tv_settings_user_full_name_header"
             style="@style/Settings_small_text"
-            android:text="@string/settings_default_username"
+            tools:text="@string/settings_default_username"
             android:textColor="@color/white"
             android:textSize="@dimen/settings_tv_normal_size"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,11 +38,11 @@
             android:id="@+id/tv_settings_user_rank_header"
             style="@style/Settings_small_text_button"
             android:layout_marginStart="@dimen/margin_start"
-            android:text="@string/settings_user_rank_header"
+            tools:text="@string/settings_user_rank_header"
             android:textColor="@color/colorWhiteDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/im_settings_user_photo"
-            app:layout_constraintTop_toBottomOf="@id/tv_settings_user_name_header" />
+            app:layout_constraintTop_toBottomOf="@id/tv_settings_user_full_name_header" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -65,7 +65,7 @@
         <TextView
             android:id="@+id/tv_settings_change_username"
             style="@style/Settings_normal_text_button"
-            android:text="@string/settings_default_username"
+            tools:text="@string/settings_default_username"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -98,7 +98,7 @@
         <TextView
             android:id="@+id/tv_settings_change_user_phone"
             style="@style/Settings_normal_text_button"
-            android:text="@string/settings_number_phone_default"
+            tools:text="@string/settings_number_phone_default"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -131,7 +131,7 @@
         <TextView
             android:id="@+id/tv_settings_change_user_rank"
             style="@style/Settings_normal_text_button"
-            android:text="@string/user_rank"
+            tools:text="@string/user_rank"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -164,7 +164,7 @@
         <TextView
             android:id="@+id/tv_settings_change_work_place"
             style="@style/Settings_normal_text_button"
-            android:text="@string/settings_work_place"
+            tools:text="@string/settings_work_place"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.narozhnyiyevgen.mavraguide.MainActivity;
 import com.narozhnyiyevgen.mavraguide.R;
 import com.narozhnyiyevgen.mavraguide.databinding.FragmentSettingsBinding;
-import com.narozhnyiyevgen.mavraguide.ui.objects.FireBase;
+import com.narozhnyiyevgen.mavraguide.ui.objects.FireBaseHelper;
 
 public class SettingsFragment extends Fragment {
 
@@ -37,7 +37,7 @@ public class SettingsFragment extends Fragment {
 
         setHasOptionsMenu(true);
         binding.clSettingButtonChangeName.setOnClickListener(this::goToEditing);
-
+        initFieldsUser();
     }
 
     @Override
@@ -50,7 +50,15 @@ public class SettingsFragment extends Fragment {
                .replace(R.id.data_container, new UserChangeNameFragment())
                .addToBackStack(null)
                .commit();
+    }
 
+    private void initFieldsUser() {
+        binding.tvSettingsChangeUsername.setText(FireBaseHelper.USER.getFullName());
+        binding.tvSettingsChangeUserPhone.setText(FireBaseHelper.USER.getPHONE());
+        binding.tvSettingsChangeUserRank.setText(FireBaseHelper.USER.getRank());
+        binding.tvSettingsChangeWorkPlace.setText(FireBaseHelper.USER.getWorkplace());
+        binding.tvSettingsUserFullNameHeader.setText(FireBaseHelper.USER.getFullName());
+        binding.tvSettingsUserRankHeader.setText(FireBaseHelper.USER.getRank());
     }
 
     @Override
@@ -61,7 +69,7 @@ public class SettingsFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.settings_btn_actions_menu_exit) {
-            FireBase.AUTH.signOut();
+            FireBaseHelper.AUTH.signOut();
             Intent intent = new Intent(getActivity(), MainActivity.class);
             requireActivity().finish();
             startActivity(intent);

@@ -16,7 +16,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.narozhnyiyevgen.mavraguide.MainActivity;
 import com.narozhnyiyevgen.mavraguide.R;
 import com.narozhnyiyevgen.mavraguide.databinding.FragmentEnterPhoneBinding;
-import com.narozhnyiyevgen.mavraguide.ui.objects.FireBase;
+import com.narozhnyiyevgen.mavraguide.ui.objects.FireBaseHelper;
 
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +44,7 @@ public class EnterPhoneFragment extends Fragment {
         authCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                FireBase.AUTH
+                FireBaseHelper.AUTH
                         .signInWithCredential(phoneAuthCredential)
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
