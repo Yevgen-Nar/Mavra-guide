@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.PizzaFragment">
+    tools:context=".ui.fragments.menufragments.PizzaFragment">
 
     <TextView
         android:id="@+id/tv_pizzaFragment"

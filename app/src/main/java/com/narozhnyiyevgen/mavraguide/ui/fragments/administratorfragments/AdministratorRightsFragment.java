@@ -1,16 +1,13 @@
-package com.narozhnyiyevgen.mavraguide.ui.fragments;
+package com.narozhnyiyevgen.mavraguide.ui.fragments.administratorfragments;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.narozhnyiyevgen.mavraguide.R;
-import com.narozhnyiyevgen.mavraguide.databinding.ActivityMainBinding;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import com.narozhnyiyevgen.mavraguide.databinding.FragmentAdministratorRightsBinding;
 
 public class AdministratorRightsFragment extends Fragment {

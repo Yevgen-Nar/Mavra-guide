@@ -1,15 +1,12 @@
-package com.narozhnyiyevgen.mavraguide.ui.fragments;
+package com.narozhnyiyevgen.mavraguide.ui.fragments.menufragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.narozhnyiyevgen.mavraguide.R;
-import com.narozhnyiyevgen.mavraguide.databinding.FragmentAdministratorRightsBinding;
+import androidx.fragment.app.Fragment;
+
 import com.narozhnyiyevgen.mavraguide.databinding.FragmentCraftTeaBinding;
 
 

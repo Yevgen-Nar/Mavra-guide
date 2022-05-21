@@ -11,7 +11,7 @@
     <string name="smoothies">Смузи</string>
     <string name="milk_shake">Молочный коктель</string>
     <string name="craft_tea">Крафтовый чай</string>
-    <string name="jobObligations">Должностные обязательства</string>
+    <string name="jobObligations">Обязательства и Права</string>
     <string name="video_photo">Видео/Фото</string>
     <string name="tests">Тесты</string>
     <string name="stores">Пиццерии</string>
@@ -22,7 +22,7 @@
     <string name="settings_user_rank_header">Должность</string>
     <string name="settings_account">Аккаунт</string>
     <string name="settings_number_phone_default">+380 000000000</string>
-    <string name="settings_click_to_change_name">Нажмите, чтобы изменить</string>
+    <string name="settings_click_to_change_name">Нажмите, чтобы изменить имя и фамилию</string>
     <string name="user_rank">Должность</string>
     <string name="settings_work_place">Место работы</string>
     <string name="register_default_hint_phone">+380</string>
@@ -39,4 +39,11 @@
     <string name="user_change_name_string_surname">Фамилия</string>
     <string name="user_change_name_inut_fullname">Введите Имя и Фамилию</string>
     <string name="toast_data_updated">Данные обновлены</string>
+    <string name="click_change_workplace">Нажмите, чтобы изменить место работы</string>
+    <string name="click_change_rank">Нажмите, чтобы изменить должность</string>
+    <string name="click_change_phone_number">Нажмите, чтобы изменить телефон</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <string name="photo">photo</string>
+    <string name="get_admin_rights">Права админестратора</string>
 </resources>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.AdministratorRightsFragment"
+    tools:context=".ui.fragments.administratorfragments.AdministratorRightsFragment"
     android:id="@+id/id_fragment_administrator_rights">
 
     <!-- TODO: Update blank fragment layout -->

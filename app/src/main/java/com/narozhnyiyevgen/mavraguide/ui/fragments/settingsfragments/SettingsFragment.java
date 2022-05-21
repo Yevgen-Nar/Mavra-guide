@@ -1,4 +1,4 @@
-package com.narozhnyiyevgen.mavraguide.ui.fragments;
+package com.narozhnyiyevgen.mavraguide.ui.fragments.settingsfragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,14 +27,18 @@ public class SettingsFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentSettingsBinding.inflate(getLayoutInflater(), container, false);
         View v = binding.getRoot();
-
         return v;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        requireActivity().getMenuInflater().inflate(R.menu.settings_actions_menu,menu);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-
         setHasOptionsMenu(true);
         binding.clSettingButtonChangeName.setOnClickListener(this::goToEditing);
         initFieldsUser();
@@ -46,8 +50,8 @@ public class SettingsFragment extends Fragment {
     }
 
     private void goToEditing(View view) {
-       getFragmentManager().beginTransaction()
-               .replace(R.id.data_container, new UserChangeNameFragment())
+       getParentFragmentManager().beginTransaction()
+               .replace(R.id.nav_host_fragment, new UserChangeNameFragment())
                .addToBackStack(null)
                .commit();
     }
@@ -59,11 +63,6 @@ public class SettingsFragment extends Fragment {
         binding.tvSettingsChangeWorkPlace.setText(FireBaseHelper.USER.getWorkplace());
         binding.tvSettingsUserFullNameHeader.setText(FireBaseHelper.USER.getFullName());
         binding.tvSettingsUserRankHeader.setText(FireBaseHelper.USER.getRank());
-    }
-
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        requireActivity().getMenuInflater().inflate(R.menu.settings_actions_menu, menu);
     }
 
     @Override

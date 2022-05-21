@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title=""
+        >
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_mavra"
+                    android:icon="@drawable/all_menu_vector"
+                    android:title="@string/myMenu" />
+            </group>
+        </menu>
+    </item>
+    <group
+        android:checkableBehavior="single"
+        android:visible="true">
+        <item
+            android:id="@+id/menu_job_right"
+            android:icon="@drawable/all_prava"
+            android:title="@string/jobObligations" />
+    </group>
+
+    <group
+        android:checkableBehavior="single"
+        android:visible="true">
+        <item
+            android:id="@+id/menu_pizzeria"
+            android:icon="@drawable/store_vector"
+            android:title="@string/stores" />
+    </group>
+
+
+    <group
+        android:checkableBehavior="single"
+        android:visible="true">
+        <item
+            android:id="@+id/menu_staff"
+            android:icon="@drawable/all_human_vector"
+            android:title="@string/staff" />
+    </group>
+
+
+    <group
+        android:checkableBehavior="single"
+        android:visible="true">
+        <item
+            android:id="@+id/menu_media"
+            android:icon="@drawable/video_photo_vector"
+            android:title="@string/video_photo" />
+    </group>
+
+
+    <item android:title="">
+        <menu>
+            <group
+                android:checkableBehavior="single"
+                android:visible="true">
+                <item
+                    android:id="@+id/menu_settings"
+                    android:icon="@drawable/setings_vector"
+                    android:title="@string/settings" />
+            </group>
+        </menu>
+    </item>
+</menu>

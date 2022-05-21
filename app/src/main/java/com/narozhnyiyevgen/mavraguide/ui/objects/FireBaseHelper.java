@@ -29,17 +29,17 @@ public class FireBaseHelper {
         }
     }
 
-    public void changeFullName(String fullname, FragmentManager fragment) {
+    public void changeFullName(String fullName, FragmentManager fragment) {
         REF_DATA_ROOT
                 .child(NodeEnum.NODE_MAIN.getNODE_NAME())
                 .child(NodeEnum.NODE_PIZZERIA.getNODE_NAME())
                 .child(NodeEnum.NODE_USERS.getNODE_NAME())
                 .child(FireBaseHelper.UID)
                 .child(UserFields.FULL_NAME.getUSER_FIELDS_VALUE())
-                .setValue(fullname)
+                .setValue(fullName)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        FireBaseHelper.USER.setFullName(fullname);
+                        FireBaseHelper.USER.setFullName(fullName);
                         fragment.popBackStack();
                     }
                 });
@@ -50,7 +50,7 @@ public class FireBaseHelper {
                 .child(NodeEnum.NODE_MAIN.getNODE_NAME())
                 .child(NodeEnum.NODE_PIZZERIA.getNODE_NAME())
                 .child(NodeEnum.NODE_USERS.getNODE_NAME())
-                .child(FireBaseHelper.UID)
+                .child(UID)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

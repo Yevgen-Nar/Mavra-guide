@@ -8,7 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.narozhnyiyevgen.mavraguide.R;
 import com.narozhnyiyevgen.mavraguide.databinding.ActivityRegistrBinding;
-import com.narozhnyiyevgen.mavraguide.ui.fragments.EnterPhoneFragment;
+import com.narozhnyiyevgen.mavraguide.ui.fragments.registerfragments.EnterPhoneFragment;
 import com.narozhnyiyevgen.mavraguide.ui.objects.FireBaseHelper;
 
 public class RegisterActivity extends AppCompatActivity {

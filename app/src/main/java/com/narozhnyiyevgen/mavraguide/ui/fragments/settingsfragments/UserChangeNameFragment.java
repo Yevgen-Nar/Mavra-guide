@@ -1,4 +1,4 @@
-package com.narozhnyiyevgen.mavraguide.ui.fragments;
+package com.narozhnyiyevgen.mavraguide.ui.fragments.settingsfragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -37,7 +37,9 @@ public class UserChangeNameFragment extends Fragment {
     public void onResume() {
         super.onResume();
         setHasOptionsMenu(true);
-        enterNewFullNameUser();
+        if (!FireBaseHelper.USER.getFullName().isEmpty()){
+            enterNewFullNameUser();
+        }
     }
 
     private void enterNewFullNameUser() {

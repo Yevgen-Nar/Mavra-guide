@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.SettingsFragment">
+    tools:context=".ui.fragments.settingsfragments.SettingsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_settings_header_bloc"
@@ -29,7 +29,7 @@
             style="@style/Settings_small_text"
             tools:text="@string/settings_default_username"
             android:textColor="@color/white"
-            android:textSize="@dimen/settings_tv_normal_size"
+            android:textSize="@dimen/tv_normal_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/im_settings_user_photo"
             app:layout_constraintTop_toTopOf="@+id/im_settings_user_photo" />
@@ -106,7 +106,7 @@
         <TextView
             android:id="@+id/tv_settings_click_to_change_phone"
             style="@style/Settings_small_text_button"
-            android:text="@string/settings_click_to_change_name"
+            android:text="@string/click_change_phone_number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_settings_change_user_phone" />
@@ -139,7 +139,7 @@
         <TextView
             android:id="@+id/tv_settings_click_to_change_user_rank"
             style="@style/Settings_small_text_button"
-            android:text="@string/settings_click_to_change_name"
+            android:text="@string/click_change_rank"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_settings_change_user_rank" />
@@ -172,7 +172,7 @@
         <TextView
             android:id="@+id/tv_settings_click_to_change_work_place"
             style="@style/Settings_small_text_button"
-            android:text="@string/settings_click_to_change_name"
+            android:text="@string/click_change_workplace"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_settings_change_work_place" />

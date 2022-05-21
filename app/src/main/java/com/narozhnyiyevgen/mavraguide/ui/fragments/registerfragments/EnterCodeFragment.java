@@ -1,4 +1,4 @@
-package com.narozhnyiyevgen.mavraguide.ui.fragments;
+package com.narozhnyiyevgen.mavraguide.ui.fragments.registerfragments;
 
 import android.content.Intent;
 import android.os.Bundle;

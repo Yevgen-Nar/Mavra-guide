@@ -2,15 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:icon="@drawable/ic_settings_btn_actions_menu"
+    <item
+        android:icon="@drawable/ic_settings_btn_actions_menu"
         android:title=""
         app:showAsAction="ifRoom">
 
         <menu>
-            <item android:id="@+id/settings_btn_actions_menu_exit"
+            <item
+                android:id="@+id/settings_btn_actions_menu_exit"
                 android:icon="@drawable/ic_settings_btn_actions_menu_exit"
-                android:title="@string/settings_actions_menu_title_account_exit"
-                app:showAsAction="never"/>
+                android:title="@string/settings_actions_menu_title_account_exit" />
+
+            <item
+                android:id="@+id/settings_admin_rights"
+                android:title="@string/get_admin_rights"
+                android:icon="@drawable/ic_admin_panel_settings"
+                />
         </menu>
     </item>
 

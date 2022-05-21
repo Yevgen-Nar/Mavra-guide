@@ -1,4 +1,4 @@
-package com.narozhnyiyevgen.mavraguide.ui.fragments;
+package com.narozhnyiyevgen.mavraguide.ui.fragments.registerfragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.narozhnyiyevgen.mavraguide.MainActivity;
 import com.narozhnyiyevgen.mavraguide.R;
@@ -32,9 +33,8 @@ public class EnterPhoneFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentEnterPhoneBinding.inflate(getLayoutInflater(), container, false);
-        View v = binding.getRoot();
 
-        return v;
+        return binding.getRoot();
     }
 
     @Override
@@ -59,13 +59,12 @@ public class EnterPhoneFragment extends Fragment {
 
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
-                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onCodeSent(@NonNull String id, @NonNull PhoneAuthProvider.ForceResendingToken token) {
-                assert getFragmentManager() != null;
-                getFragmentManager().beginTransaction()
+                getParentFragmentManager().beginTransaction()
                         .replace(R.id.registerDataContainer, new EnterCodeFragment(phoneNumber, id))
                         .addToBackStack(null)
                         .commit();
@@ -78,7 +77,7 @@ public class EnterPhoneFragment extends Fragment {
 
     private void sendCode(View view) {
         if (Objects.requireNonNull(binding.etEnterYourNumberPhone.getText()).toString().isEmpty()) {
-            Toast.makeText(getContext(), R.string.register_enter_your_phone, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.register_enter_your_phone, Toast.LENGTH_LONG).show();
         } else {
             authUser();
         }
@@ -88,20 +87,32 @@ public class EnterPhoneFragment extends Fragment {
 
         phoneNumber = Objects.requireNonNull(binding.etEnterYourNumberPhone.getText()).toString();
 
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phoneNumber,
-                60,
-                TimeUnit.SECONDS,
-                requireActivity(),
-                authCallbacks
+        PhoneAuthProvider.verifyPhoneNumber(
+                PhoneAuthOptions.newBuilder(FireBaseHelper.AUTH)
+                        .setActivity(requireActivity())
+                        .setPhoneNumber(phoneNumber)
+                        .setTimeout(60L, TimeUnit.SECONDS)
+                        .setCallbacks(authCallbacks)
+                        .build()
         );
+
+//        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+//                phoneNumber,
+//                60,
+//                TimeUnit.SECONDS,
+//                requireActivity(),
+//                authCallbacks
+//        );
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        binding.etEnterYourNumberPhone.setText(null);
     }
 
-
+    @Override
+    public void onPause() {
+        super.onPause();
+        binding.etEnterYourNumberPhone.setText(null);
+    }
 }
